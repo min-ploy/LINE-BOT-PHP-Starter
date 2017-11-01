@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 					'type' => 'text',
 					'text' => $text = 'ดีจ้าาา'
-					'text' => $text = 'ว่าไง'
+
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
