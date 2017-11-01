@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 					'text' => $text = 'ดีจ้าาา'
 				},
 				{
-					'type' => 'sticker',
+					'type' => 'text',
 					'text' => $text = 'ว่าไง'
 				},
 			];
