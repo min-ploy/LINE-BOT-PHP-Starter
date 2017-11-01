@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 				{
 					'type' => 'text',
 					'text' => $text = 'ว่าไง'
-				},
+				}
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
