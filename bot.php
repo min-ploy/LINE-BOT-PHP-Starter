@@ -142,11 +142,11 @@ if (!is_null($events['events'])) {
 				case 'หิวข้าว' :
 					$messages = [
 						'type' => 'text',
-						'text' => 'ลองค้นหาร้านอร่อยๆดูสิ โดยพิมพ์คำว่า ร้านอาหาร'
+						'text' => 'ลองค้นหาร้านอร่อยๆดูสิ'
 					];
 					$mess = [
 						'type' => 'text',
-						'text' => 'โดยพิมพ์คำว่า ร้านอาหาร นะ'
+						'text' => 'โดยพิมพ์คำว่า ร้านอาหาร ดูนะ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -206,11 +206,19 @@ if (!is_null($events['events'])) {
 						'type' => 'text',
 						'text' => 'ลองมองไปที่ท้องฟ้าสิ'
 					];
+					$mess = [
+						'type' => 'text',
+						'text' => 'แต่มีร่มสำรองหรือเปล่า'
+					];
+					$me = [
+						'type' => 'text',
+						'text' => 'ถ้าไม่มีลองหาที่ซื้อร่ม โดยพิมพ์คำว่า ห้างสรรพสินค้า ดูสิ'
+					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
 					$data = [
 						'replyToken' => $replyToken,
-						'messages' => [$messages]
+						'messages' => [$messages, $mess, $me]
 					];
 					$post = json_encode($data);
 					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
