@@ -31,7 +31,6 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					
 					break;
 					
 				case 'สบายดีมั้ย' :
@@ -45,24 +44,8 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
-				
+									
 				case 'วันนี้' :
 					$messages = [
 						'type' => 'text',
@@ -78,24 +61,8 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages, $mess]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
-				
+									
 				case 'อากาศดี' :
 					$messages = [
 						'type' => 'text',
@@ -107,24 +74,8 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
 					
-				
 				case 'หิวข้าว' :
 					$messages = [
 						'type' => 'text',
@@ -140,23 +91,7 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages, $mess]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
 				
 				case 'น่ารัก' :
 					$messages = [
@@ -169,23 +104,7 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
 				
 				case 'ฝนจะตกมั้ย' :
 					$messages = [
@@ -206,23 +125,7 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages, $mess, $me]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
 				
 				case 'บอทชื่ออะไร' :
 					$messages = [
@@ -235,23 +138,7 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
 				
 				case 'แนะนำเพลงหน่อย' :
 					$messages = [
@@ -264,23 +151,7 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
-					
 				
 				case 'ทำอะไรดี' :
 					$messages = [
@@ -301,21 +172,6 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages, $mess, $me]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;
 					
 				case 'ร้านอาหาร': 
@@ -339,7 +195,7 @@ if (!is_null($events['events'])) {
 						$object = json_decode($text, TRUE);
 						$name = $object['result']['name']; 
 						$number = $object['result']['formatted_phone_number'];
-						 $address = $object['result']['formatted_address'];
+						$address = $object['result']['formatted_address'];
 						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 					}            
 				    // Build message to reply back
@@ -352,18 +208,7 @@ if (!is_null($events['events'])) {
 					$data = [
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
-				    	];
-		    			$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-					$result = curl_exec($ch);
-					url_close($ch);
-					echo $result . "\r\n";		   
+				    	];	   
 					break;
 					
 				default :
@@ -377,39 +222,35 @@ if (!is_null($events['events'])) {
 						'replyToken' => $replyToken,
 						'messages' => [$messages]
 					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-					$result = curl_exec($ch);
-					curl_close($ch);
-
-					echo $result . "\r\n";
 					break;					
 			}
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			
-			
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
 		}
+		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker'){
+			// Get text sent
+			$text = $event['message']['sticker'];
+			// Get replyToken
+	       		$replyToken = $event['replyToken'];
+			$random = rand(407,430);
+			$messages = [
+				'type' => 'sticker',
+                         	'packageId' => '1',
+                         	'stickerId' => $random
+			];
+		}
+		$post = json_encode($data);
+		$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			
+		$result = curl_exec($ch);
+		curl_close($ch);
+		url_close($ch);
+		echo $result . "\r\n";
 	}
 }
 echo "OK";
