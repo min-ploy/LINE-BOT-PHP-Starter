@@ -210,7 +210,7 @@ if (!is_null($events['events'])) {
 						'messages' => [$messages]
 				    	];	   
 					break;
-					
+									
 				default :
 					$messages = [
 						'type' => 'text',
