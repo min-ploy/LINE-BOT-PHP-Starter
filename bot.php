@@ -144,11 +144,15 @@ if (!is_null($events['events'])) {
 						'type' => 'text',
 						'text' => 'ลองค้นหาร้านอร่อยๆดูสิ โดยพิมพ์คำว่า ร้านอาหาร'
 					];
+					$mess = [
+						'type' => 'text',
+						'text' => 'โดยพิมพ์คำว่า ร้านอาหาร นะ'
+					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
 					$data = [
 						'replyToken' => $replyToken,
-						'messages' => [$messages]
+						'messages' => [$messages, $mess]
 					];
 					$post = json_encode($data);
 					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -291,13 +295,17 @@ if (!is_null($events['events'])) {
 					];
 					$mess = [
 						'type' => 'text',
-						'text' => 'ลองค้นหาวัดใกล้ๆ โดยพิมพ์คำว่า วัด ดูสิ'
+						'text' => 'ลองค้นหาวัดใกล้ๆ'
+					];
+					$me = [
+						'type' => 'text',
+						'text' => 'โดยพิมพ์คำว่า วัด ดูสิ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
 					$data = [
 						'replyToken' => $replyToken,
-						'messages' => [$messages, $mess]
+						'messages' => [$messages, $mess, $me]
 					];
 					$post = json_encode($data);
 					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
