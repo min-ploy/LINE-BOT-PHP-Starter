@@ -77,10 +77,43 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'วันนี้' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'วันดีปีใหม่'
+					];
+					$mess = [
+						'type' => 'text',
+						'text' => 'อย่าลืมไปลอยกระทงนะ'
+					];
+					// Make a POST Request to Messaging API to reply to sender
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages, $mess]
+					];
+					$post = json_encode($data);
+					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+					$ch = curl_init($url);
+					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			
+			
+					$result = curl_exec($ch);
+					curl_close($ch);
+
+					echo $result . "\r\n";
+					break;
+					
+				
+				case 'อากาศดี' :
+					$messages = [
+						'type' => 'text',
+						'text' => 'เหมาะแก่การนอนมากๆเลย ~'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -106,10 +139,10 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'หิวข้าว' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'ลองค้นหาร้านอร่อยๆดูสิ โดยพิมพ์คำว่า ร้านอาหาร'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -135,10 +168,10 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'น่ารัก' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'ขอบคุณที่ชมค้าบบบ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -164,10 +197,10 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'ฝนจะตกมั้ย' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'ลองมองไปที่ท้องฟ้าสิ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -193,10 +226,10 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'บอทชื่ออะไร' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'เราชื่อ บอทเวย์'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -222,10 +255,10 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'แนะนำเพลงหน่อย' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'ฉันแพ้ทางคนอย่างเธอ ~'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -251,16 +284,20 @@ if (!is_null($events['events'])) {
 					break;
 					
 				
-				case '' :
+				case 'ทำอะไรดี' :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'ไปไหว้พระกันมั้ย'
+					];
+					$mess = [
+						'type' => 'text',
+						'text' => 'ลองค้นหาวัดใกล้ๆ โดยพิมพ์คำว่า วัด ดูสิ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
 					$data = [
 						'replyToken' => $replyToken,
-						'messages' => [$messages]
+						'messages' => [$messages, $mess]
 					];
 					$post = json_encode($data);
 					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -279,11 +316,10 @@ if (!is_null($events['events'])) {
 					echo $result . "\r\n";
 					break;
 					
-				
-				case '' :
+				default :
 					$messages = [
 						'type' => 'text',
-						'text' => ''
+						'text' => 'กรุณาสอนบอท'
 					];
 					// Make a POST Request to Messaging API to reply to sender
 					$url = 'https://api.line.me/v2/bot/message/reply';
@@ -306,7 +342,7 @@ if (!is_null($events['events'])) {
 					curl_close($ch);
 
 					echo $result . "\r\n";
-					break;
+					break;					
 			}
 		}
 	}
