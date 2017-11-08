@@ -174,6 +174,16 @@ if (!is_null($events['events'])) {
 					];
 					break;
 					
+				case 'location':
+					$outputText = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder("Eiffel Tower", "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France", 48.858328, 2.294750);
+					$response = $bot->replyMessage($event->getReplyToken(), $outputText);
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$response]
+					];
+					break;
+					
 				case 'ร้านอาหาร': 
 					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
 					$curl_handle = curl_init();
@@ -256,6 +266,9 @@ if (!is_null($events['events'])) {
 		curl_close($ch);
 		url_close($ch);
 		echo $result . "\r\n";
+		
+		
+		
 	}
 }
 echo "OK";
