@@ -210,7 +210,192 @@ if (!is_null($events['events'])) {
 						'messages' => [$messages]
 				    	];	   
 					break;
-									
+				
+				case 'ร้านค้า': 
+					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+					$curl_handle = curl_init();
+					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt( $curl_handle, CURLOPT_URL, $url );
+					curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+					$text = curl_exec( $curl_handle );
+					curl_close( $curl_handle ); 
+					$obj = json_decode($text, TRUE);
+					for ($x = 0; $x <= 10; $x++) {
+						$mes = $obj['results'][$x]['place_id']; 
+						$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+						$curl_handle = curl_init();
+						curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+						curl_setopt( $curl_handle, CURLOPT_URL, $url );
+						curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+						$text = curl_exec( $curl_handle );
+						curl_close( $curl_handle ); 
+						$object = json_decode($text, TRUE);
+						$name = $object['result']['name']; 
+						$number = $object['result']['formatted_phone_number'];
+						$address = $object['result']['formatted_address'];
+						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+					}            
+				    // Build message to reply back
+					$messages = [
+						'type' => 'text',
+						'text' => "$addname"
+					];
+					// Make a POST Request to Messaging API to reply to sender
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages]
+				    	];	   
+					break;
+					
+				case 'โรงพยาบาล': 
+					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+					$curl_handle = curl_init();
+					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt( $curl_handle, CURLOPT_URL, $url );
+					curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+					$text = curl_exec( $curl_handle );
+					curl_close( $curl_handle ); 
+					$obj = json_decode($text, TRUE);
+					for ($x = 0; $x <= 10; $x++) {
+						$mes = $obj['results'][$x]['place_id']; 
+						$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+						$curl_handle = curl_init();
+						curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+						curl_setopt( $curl_handle, CURLOPT_URL, $url );
+						curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+						$text = curl_exec( $curl_handle );
+						curl_close( $curl_handle ); 
+						$object = json_decode($text, TRUE);
+						$name = $object['result']['name']; 
+						$number = $object['result']['formatted_phone_number'];
+						$address = $object['result']['formatted_address'];
+						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+					}            
+				    // Build message to reply back
+					$messages = [
+						'type' => 'text',
+						'text' => "$addname"
+					];
+					// Make a POST Request to Messaging API to reply to sender
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages]
+				    	];	   
+					break;
+					
+				case 'ATM': 
+					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+					$curl_handle = curl_init();
+					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt( $curl_handle, CURLOPT_URL, $url );
+					curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+					$text = curl_exec( $curl_handle );
+					curl_close( $curl_handle ); 
+					$obj = json_decode($text, TRUE);
+					for ($x = 0; $x <= 10; $x++) {
+						$mes = $obj['results'][$x]['place_id']; 
+						$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+						$curl_handle = curl_init();
+						curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+						curl_setopt( $curl_handle, CURLOPT_URL, $url );
+						curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+						$text = curl_exec( $curl_handle );
+						curl_close( $curl_handle ); 
+						$object = json_decode($text, TRUE);
+						$name = $object['result']['name']; 
+						$number = $object['result']['formatted_phone_number'];
+						$address = $object['result']['formatted_address'];
+						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+					}            
+				    // Build message to reply back
+					$messages = [
+						'type' => 'text',
+						'text' => "$addname"
+					];
+					// Make a POST Request to Messaging API to reply to sender
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages]
+				    	];	   
+					break;
+					
+				case 'ที่พัก': 
+					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+					$curl_handle = curl_init();
+					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt( $curl_handle, CURLOPT_URL, $url );
+					curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+					$text = curl_exec( $curl_handle );
+					curl_close( $curl_handle ); 
+					$obj = json_decode($text, TRUE);
+					for ($x = 0; $x <= 10; $x++) {
+						$mes = $obj['results'][$x]['place_id']; 
+						$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+						$curl_handle = curl_init();
+						curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+						curl_setopt( $curl_handle, CURLOPT_URL, $url );
+						curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+						$text = curl_exec( $curl_handle );
+						curl_close( $curl_handle ); 
+						$object = json_decode($text, TRUE);
+						$name = $object['result']['name']; 
+						$number = $object['result']['formatted_phone_number'];
+						$address = $object['result']['formatted_address'];
+						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+					}            
+				    // Build message to reply back
+					$messages = [
+						'type' => 'text',
+						'text' => "$addname"
+					];
+					// Make a POST Request to Messaging API to reply to sender
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages]
+				    	];	   
+					break;
+					
+				case 'ปั๊มน้ำมัน': 
+					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+					$curl_handle = curl_init();
+					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt( $curl_handle, CURLOPT_URL, $url );
+					curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+					$text = curl_exec( $curl_handle );
+					curl_close( $curl_handle ); 
+					$obj = json_decode($text, TRUE);
+					for ($x = 0; $x <= 10; $x++) {
+						$mes = $obj['results'][$x]['place_id']; 
+						$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+						$curl_handle = curl_init();
+						curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+						curl_setopt( $curl_handle, CURLOPT_URL, $url );
+						curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+						$text = curl_exec( $curl_handle );
+						curl_close( $curl_handle ); 
+						$object = json_decode($text, TRUE);
+						$name = $object['result']['name']; 
+						$number = $object['result']['formatted_phone_number'];
+						$address = $object['result']['formatted_address'];
+						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+					}            
+				    // Build message to reply back
+					$messages = [
+						'type' => 'text',
+						'text' => "$addname"
+					];
+					// Make a POST Request to Messaging API to reply to sender
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages]
+				    	];	   
+					break;
+					
 				default :
 					$messages = [
 						'type' => 'text',
