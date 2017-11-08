@@ -398,7 +398,7 @@ if (!is_null($events['events'])) {
 									
 				default :
 					$messages = [
-						'type' => 'text'
+						'type' => 'text',
 						'text' => 'กรุณาสอนบอท'
 					];
 					// Make a POST Request to Messaging API to reply to sender
