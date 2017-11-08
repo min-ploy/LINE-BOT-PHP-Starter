@@ -84,6 +84,21 @@ foreach ($events as $event) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("demo command: text, location, button, confirm to test message template");	
 			break;
 		}
-		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
+		$post = json_encode($outputText);
+		$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $httpClient);
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			
+		$result = curl_exec($ch);
+		curl_close($ch);
+		url_close($ch);
+		echo $result . "\r\n";		
+		//$response = $bot->replyMessage($event->getReplyToken(), $outputText);
 	}
 } 
+
+echo "OK";
