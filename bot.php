@@ -86,11 +86,7 @@ if (!is_null($events['events'])) {
 						'text' => 'โดยพิมพ์คำว่า ร้านอาหาร ดูนะ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
-					$url = 'https://api.line.me/v2/bot/message/reply';
-					$data = [
-						'replyToken' => $replyToken,
-						'messages' => [$messages, $mess]
-					];
+					
 					$columns = array();
 					$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
 					for($i=0;$i<5;$i++) {
@@ -103,6 +99,11 @@ if (!is_null($events['events'])) {
 					}
 					$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
+					$url = 'https://api.line.me/v2/bot/message/reply';
+					$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages, $mess, $outputText]
+					];
 					break;
 				
 				case 'น่ารัก' :
