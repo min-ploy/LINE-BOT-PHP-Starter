@@ -395,54 +395,7 @@ if (!is_null($events['events'])) {
 						'messages' => [$messages]
 				    	];	   
 					break;
-					
-				case 'ห้าง': 
-					$columns = array();
-					$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
-					$url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=2000&type=shopping_mall&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
-					$curl_handle = curl_init();
-					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
-					curl_setopt( $curl_handle, CURLOPT_URL, $url );
-					curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
-					$text = curl_exec( $curl_handle );
-					curl_close( $curl_handle ); 
-					$obj = json_decode($text, TRUE);
-					for ($x = 0; $x <= 5; $x++) {
-						$mes = $obj['results'][$x]['place_id']; 
-						$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
-						$curl_handle = curl_init();
-						curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
-						curl_setopt( $curl_handle, CURLOPT_URL, $url );
-						curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
-						$text = curl_exec( $curl_handle );
-						curl_close( $curl_handle ); 
-						$object = json_decode($text, TRUE);
-						$name = $object['result']['name']; 
-						$number = $object['result']['formatted_phone_number'];
-						$address = $object['result']['formatted_address'];
-						$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
-						$actions = array(
-							new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Add to Card","action=carousel&button=".$i),
-							new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("View","http://www.google.com")
-						);
-						$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
-						$columns[] = $column;
-					}  
-					$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-					$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
-				    // Build message to reply back
-					$messages = [
-						'type' => 'text',
-						'text' => "$addname"
-					];
-					// Make a POST Request to Messaging API to reply to sender
-					$url = 'https://api.line.me/v2/bot/message/reply';
-					$data = [
-						'replyToken' => $replyToken,
-						'messages' => [$messages]
-				    	];	   
-					break;
-					
+									
 				default :
 					$messages = [
 						'type' => 'text',
