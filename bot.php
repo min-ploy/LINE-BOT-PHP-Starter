@@ -86,23 +86,10 @@ if (!is_null($events['events'])) {
 						'text' => 'โดยพิมพ์คำว่า ร้านอาหาร ดูนะ'
 					];
 					// Make a POST Request to Messaging API to reply to sender
-					
-					$columns = array();
-					$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
-					for($i=0;$i<5;$i++) {
-  						$actions = array(
-							new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Add to Cart","action=carousel&button=".$i),
-							new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("View","http://www.google.com")
-						);
-  						$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
-						$columns[] = $column;
-					}
-					$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-					$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
 					$url = 'https://api.line.me/v2/bot/message/reply';
 					$data = [
 						'replyToken' => $replyToken,
-						'messages' => [$messages, $mess, $outputText]
+						'messages' => [$messages, $mess]					
 					];
 					break;
 				
@@ -256,7 +243,21 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages]
 			];
 		}
-		$post = json_encode($data);
+		
+		$columns = array();
+		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
+		for($i=0;$i<5;$i++) {
+  			$actions = array(
+				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Add to Cart","action=carousel&button=".$i),
+				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("View","http://www.google.com")
+			);
+  			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
+			$columns[] = $column;
+		}
+		$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+		$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
+		
+		$post = json_encode($data, $outputText);
 		$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 		$ch = curl_init($url);
