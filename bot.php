@@ -243,23 +243,6 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages]
 			];
 		}
-		
-		$columns = array();
-		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
-		for($i=0;$i<5;$i++) {
-  			$actions = array(
-				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Add to Cart","action=carousel&button=".$i),
-				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("View","http://www.google.com")
-			);
-  			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
-			$columns[] = $column;
-		}
-		$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-		$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
-		
-		$post = json_encode($data, $outputText);
-		$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
