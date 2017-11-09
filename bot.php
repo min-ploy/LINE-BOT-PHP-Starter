@@ -67,7 +67,7 @@ if ($message->{"text"} == 'confirm') {
             'type' => 'carousel',
             'columns' => [
                 [
-                    'title' => ('Head1', $img),
+                    'title' => 'Head1',
                     'text' => 'Description',
                     'actions' => [
                         [
