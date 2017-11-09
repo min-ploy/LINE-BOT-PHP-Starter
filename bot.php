@@ -75,7 +75,7 @@ if ($message->{"text"} == 'confirm') {
             'columns' => [
                 [
                     'title' => 'Head1',
-                    'text' => 'Description',
+                    'text' => 'Description'
                     'actions' => [
                         [
                             'type' => 'postback',
