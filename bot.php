@@ -58,6 +58,7 @@ if ($message->{"text"} == 'confirm') {
     ];
 } elseif ($message->{"text"} == 'carousel') {
     // カルーセルタイプ
+    $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
     $messageData = [
         'type' => 'template',
         'altText' => 'carousel',
@@ -65,8 +66,8 @@ if ($message->{"text"} == 'confirm') {
             'type' => 'carousel',
             'columns' => [
                 [
-                    'title' => 'carousel1',
-                    'text' => 'carousel1',
+                    'title' => 'Head1',
+                    'text' => 'Description',
                     'actions' => [
                         [
                             'type' => 'postback',
@@ -81,8 +82,8 @@ if ($message->{"text"} == 'confirm') {
                     ]
                 ],
                 [
-                    'title' => 'carousel2',
-                    'text' => 'carousel2',
+                    'title' => 'Head 2',
+                    'text' => 'Description',
                     'actions' => [
                         [
                             'type' => 'postback',
@@ -109,7 +110,7 @@ if ($message->{"text"} == 'confirm') {
 
 $response = [
     'replyToken' => $replyToken,
-    'messages' => [$messageData]
+    'messages' => [$messageData, $img_url]
 ];
 error_log(json_encode($response));
 $post = json_encode($response);
