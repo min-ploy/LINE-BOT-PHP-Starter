@@ -60,7 +60,7 @@ if ($message->{"text"} == 'confirm') {
     // カルーセルタイプ
     $messageData = [
         'type' => 'template',
-        'altText' => 'カルーセル',
+        'altText' => 'carousel',
         'template' => [
             'type' => 'carousel',
             'columns' => [
