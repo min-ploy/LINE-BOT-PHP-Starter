@@ -11,7 +11,6 @@ $message = $jsonObj->{"events"}[0]->{"message"};
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
 if ($message->{"text"} == 'carousel') {
-    $img = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
     $messageData = [
         'type' => 'template',
         'altText' => 'carousel',
@@ -53,10 +52,7 @@ if ($message->{"text"} == 'carousel') {
             ]
         ]
     ];
-    $response = [
-    'replyToken' => $replyToken,
-    'messages' => [$messageData, $img]
-    ];
+    
 } else {
 
     $messageData = [
@@ -65,6 +61,10 @@ if ($message->{"text"} == 'carousel') {
     ];
 }
 
+$response = [
+    'replyToken' => $replyToken,
+    'messages' => [$messageData]
+];
 
 error_log(json_encode($response));
 $post = json_encode($response);
