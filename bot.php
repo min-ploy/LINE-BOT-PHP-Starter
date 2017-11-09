@@ -33,6 +33,10 @@ if ($message->{"text"} == 'confirm') {
             ]
         ]
     ];
+    $response = [
+    'replyToken' => $replyToken,
+    'messages' => [$messageData]
+    ];
 } elseif ($message->{"text"} == 'button') {
     // ボタンタイプ
     $messageData = [
@@ -55,6 +59,10 @@ if ($message->{"text"} == 'confirm') {
                 ]
             ]
         ]
+    ];
+    $response = [
+    'replyToken' => $replyToken,
+    'messages' => [$messageData]
     ];
 } elseif ($message->{"text"} == 'carousel') {
     // カルーセルタイプ
@@ -100,18 +108,21 @@ if ($message->{"text"} == 'confirm') {
             ]
         ]
     ];
+    $response = [
+    'replyToken' => $replyToken,
+    'messages' => [$messageData, $img_url]
+    ];
 } else {
     // それ以外は送られてきたテキストをオウム返し
     $messageData = [
         'type' => 'text',
         'text' => $message->{"text"}
     ];
-}
-
-$response = [
+    $response = [
     'replyToken' => $replyToken,
     'messages' => [$messageData]
-];
+    ];
+}
 error_log(json_encode($response));
 $post = json_encode($response);
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
