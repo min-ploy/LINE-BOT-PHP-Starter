@@ -10,55 +10,7 @@ $jsonObj = json_decode($jsonString);
 $message = $jsonObj->{"events"}[0]->{"message"};
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
-
-if ($message->{"text"} == 'confirm') {
-
-    $messageData = [
-        'type' => 'template',
-        'altText' => 'Confirm alt text',
-        'template' => [
-            'type' => 'confirm',
-            'text' => 'Do it?',
-            'actions' => [
-                [
-                    'type' => 'message',
-                    'label' => 'Yes',
-                    'text' => 'Yes'
-                ],
-                [
-                    'type' => 'message',
-                    'label' => 'No',
-                    'text' => 'No'
-                ],
-            ]
-        ]
-    ];
-    
-} elseif ($message->{"text"} == 'button') {
-
-    $messageData = [
-        'type' => 'template',
-        'altText' => 'buttons',
-        'template' => [
-            'type' => 'buttons',
-            'title' => 'My button sample',
-            'text' => 'Hello my button',
-            'actions' => [
-                [
-                    'type' => 'postback',
-                    'label' => 'view',
-                    'data' => 'value'
-                ],
-                [
-                    'type' => 'uri',
-                    'label' => 'google',
-                    'uri' => 'https://google.com'
-                ]
-            ]
-        ]
-    ];
-    
-} elseif ($message->{"text"} == 'carousel') {
+if ($message->{"text"} == 'carousel') {
     $img = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
     $messageData = [
         'type' => 'template',
@@ -113,10 +65,6 @@ if ($message->{"text"} == 'confirm') {
     ];
 }
 
-$response = [
-    'replyToken' => $replyToken,
-    'messages' => [$messageData]
-];
 
 error_log(json_encode($response));
 $post = json_encode($response);
