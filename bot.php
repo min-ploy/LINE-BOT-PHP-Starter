@@ -112,16 +112,16 @@ $response = [
     'messages' => [$messageData]
 ];
 error_log(json_encode($response));
-
+$post = json_encode($response);
+$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 $ch = curl_init('https://api.line.me/v2/bot/message/reply');
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json; charser=UTF-8',
-    'Authorization: Bearer ' . $accessToken
-));
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $result = curl_exec($ch);
+url_close($ch);
 error_log($result);
-curl_close($ch);
+curl_close($ch);	
