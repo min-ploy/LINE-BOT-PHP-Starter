@@ -33,10 +33,7 @@ if ($message->{"text"} == 'confirm') {
             ]
         ]
     ];
-    $response = [
-    'replyToken' => $replyToken,
-    'messages' => [$messageData]
-    ];
+    
 } elseif ($message->{"text"} == 'button') {
 
     $messageData = [
@@ -60,10 +57,7 @@ if ($message->{"text"} == 'confirm') {
             ]
         ]
     ];
-    $response = [
-    'replyToken' => $replyToken,
-    'messages' => [$messageData]
-    ];
+    
 } elseif ($message->{"text"} == 'carousel') {
 
     $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
@@ -118,11 +112,13 @@ if ($message->{"text"} == 'confirm') {
         'type' => 'text',
         'text' => $message->{"text"}
     ];
-    $response = [
+}
+
+$response = [
     'replyToken' => $replyToken,
     'messages' => [$messageData]
-    ];
-}
+];
+
 error_log(json_encode($response));
 $post = json_encode($response);
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
