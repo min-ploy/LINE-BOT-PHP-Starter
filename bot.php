@@ -38,7 +38,7 @@ if ($message->{"text"} == 'confirm') {
 
     $messageData = [
         'type' => 'template',
-        'altText' => 'ボタン',
+        'altText' => 'buttons',
         'template' => [
             'type' => 'buttons',
             'title' => 'My button sample',
@@ -59,7 +59,7 @@ if ($message->{"text"} == 'confirm') {
     ];
     
 } elseif ($message->{"text"} == 'carousel') {
-
+    $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
     $messageData = [
         'type' => 'template',
         'altText' => 'carousel',
@@ -67,7 +67,7 @@ if ($message->{"text"} == 'confirm') {
             'type' => 'carousel',
             'columns' => [
                 [
-                    'title' => 'Head1',
+                    'title' => ('Head1', $img),
                     'text' => 'Description',
                     'actions' => [
                         [
