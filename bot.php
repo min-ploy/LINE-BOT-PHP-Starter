@@ -60,7 +60,6 @@ if ($message->{"text"} == 'confirm') {
     
 } elseif ($message->{"text"} == 'carousel') {
 
-    $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
     $messageData = [
         'type' => 'template',
         'altText' => 'carousel',
@@ -68,7 +67,7 @@ if ($message->{"text"} == 'confirm') {
             'type' => 'carousel',
             'columns' => [
                 [
-                    'title' => ('Head1', $img_url),
+                    'title' => 'Head1',
                     'text' => 'Description',
                     'actions' => [
                         [
@@ -107,7 +106,7 @@ if ($message->{"text"} == 'confirm') {
     'messages' => [$messageData, $img_url]
     ];
 } else {
-    // それ以外は送られてきたテキストをオウム返し
+
     $messageData = [
         'type' => 'text',
         'text' => $message->{"text"}
