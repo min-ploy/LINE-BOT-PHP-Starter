@@ -110,7 +110,7 @@ if ($message->{"text"} == 'confirm') {
 
 $response = [
     'replyToken' => $replyToken,
-    'messages' => [$messageData, $img_url]
+    'messages' => [$messageData]
 ];
 error_log(json_encode($response));
 $post = json_encode($response);
