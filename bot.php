@@ -10,9 +10,9 @@ $jsonObj = json_decode($jsonString);
 $message = $jsonObj->{"events"}[0]->{"message"};
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
-// 送られてきたメッセージの中身からレスポンスのタイプを選択
+
 if ($message->{"text"} == 'confirm') {
-    // 確認ダイアログタイプ
+
     $messageData = [
         'type' => 'template',
         'altText' => 'Confirm alt text',
@@ -38,7 +38,7 @@ if ($message->{"text"} == 'confirm') {
     'messages' => [$messageData]
     ];
 } elseif ($message->{"text"} == 'button') {
-    // ボタンタイプ
+
     $messageData = [
         'type' => 'template',
         'altText' => 'ボタン',
@@ -65,7 +65,7 @@ if ($message->{"text"} == 'confirm') {
     'messages' => [$messageData]
     ];
 } elseif ($message->{"text"} == 'carousel') {
-    // カルーセルタイプ
+
     $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
     $messageData = [
         'type' => 'template',
@@ -74,8 +74,8 @@ if ($message->{"text"} == 'confirm') {
             'type' => 'carousel',
             'columns' => [
                 [
-                    'title' => 'Head1'
-                    'text' => 'Description'
+                    'title' => ('Head1', $img_url),
+                    'text' => 'Description',
                     'actions' => [
                         [
                             'type' => 'postback',
