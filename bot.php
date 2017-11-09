@@ -55,7 +55,7 @@ if ($message->{"text"} == 'carousel') {
     ];
     $response = [
     'replyToken' => $replyToken,
-    'messages' => [$messageData, $img_url]
+    'messages' => [$messageData, $img]
     ];
 } else {
 
