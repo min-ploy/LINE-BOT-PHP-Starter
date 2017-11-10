@@ -38,6 +38,10 @@ if ($message->{"text"} == 'ร้านอาหาร') {
             'type' => 'text',
             'text' => "$name"
         ];
+	$response = [
+	'replyToken' => $replyToken,
+	'messages' => [$messageData]
+	];
 	}
 	
 	
@@ -48,12 +52,13 @@ if ($message->{"text"} == 'ร้านอาหาร') {
         'type' => 'text',
         'text' => $message->{"text"}
     ];
-}
-
-$response = [
+    $response = [
     'replyToken' => $replyToken,
     'messages' => [$messageData]
-];
+    ];
+}
+
+
 
 error_log(json_encode($response));
 $post = json_encode($response);
