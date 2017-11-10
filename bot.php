@@ -47,7 +47,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                             [
                                 'type' => 'postback',
                                 'label' => 'view',
-                                'data' => 'value'
+                                'data' => $number
                             ],
                             [
                                 'type' => 'uri',
