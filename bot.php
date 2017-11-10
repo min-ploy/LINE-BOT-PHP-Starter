@@ -43,7 +43,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		'type' => 'template',
 		'altText' => 'carousel',
 		'template' => [
-			'type' => 'image_carousel',
+			'type' => 'carousel',
+			'imageUrl' => "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363"
 			'columns' => [
 				[
 					'title' => "$name[0]",
