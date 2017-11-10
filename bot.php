@@ -45,12 +45,12 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 			'columns' => [
 				[
 					'title' => "$name[0]",
-					'text' => 'ที่อยู่',
+					'text' => "$address[0]",
 					'actions' => [
 						[
 							'type' => 'postback',
 							'label' => 'เบอร์โทร',
-							'data' => '0805860915'
+							'data' => "$number[0]"
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
@@ -59,19 +59,61 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
                     		],[
                         		'title' => "$name[1]",
-                        		'text' => 'ที่อยู่',
+                        		'text' => "$address[1]",
                         		'actions' => [
                             			[
 							'type' => 'postback',
 							'label' => 'เบอร์โทร',
-							'data' => '0805860915'
+							'data' => "$number[1]"
 						],[
                                 			'type' => 'uri',
                                 			'label' => 'Google',
                                 			'uri' => 'http://google.com'
 						]
 					]
-				]
+				],[
+					'title' => "$name[2]",
+					'text' => "$address[2]",
+					'actions' => [
+						[
+							'type' => 'postback',
+							'label' => 'เบอร์โทร',
+							'data' => "$number[2]"
+						],[
+							'type' => 'uri',
+							'label' => 'Google',
+                                			'uri' => 'http://google.com'
+						]
+					]
+                    		],[
+					'title' => "$name[3]",
+					'text' => "$address[3]",
+					'actions' => [
+						[
+							'type' => 'postback',
+							'label' => 'เบอร์โทร',
+							'data' => "$number[3]"
+						],[
+							'type' => 'uri',
+							'label' => 'Google',
+                                			'uri' => 'http://google.com'
+						]
+					]
+                    		],[
+					'title' => "$name[4]",
+					'text' => "$address[4]",
+					'actions' => [
+						[
+							'type' => 'postback',
+							'label' => 'เบอร์โทร',
+							'data' => "$number[4]"
+						],[
+							'type' => 'uri',
+							'label' => 'Google',
+                                			'uri' => 'http://google.com'
+						]
+					]
+                    		]
 			]
 		]
 	];
