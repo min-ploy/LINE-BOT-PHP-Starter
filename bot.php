@@ -29,7 +29,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$text = curl_exec( $curl_handle );
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
-		$name = $obj['result']['name']; 
+		$name = $obj['result'][$x]['name']; 
 		$number = $object['result']['formatted_phone_number'];
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
