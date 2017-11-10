@@ -41,8 +41,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                 'type' => 'carousel',
                 'columns' => [
                     [
-                        'title' => $name,
-                        'text' => $ddress,
+                        'title' => $object['result']['name'],
+                        'text' => $object['result']['formatted_address'],
                         'actions' => [
                             [
                                 'type' => 'postback',
