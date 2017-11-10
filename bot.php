@@ -33,7 +33,12 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
 		array_push($name, $object['result']['name']);
-		array_push($number, $object['result']['formatted_phone_number']);
+		$a = array_push($number, $object['result']['formatted_phone_number']);
+		if (!is_null($number, $object['result']['formatted_phone_number'])){
+			array_push($number, $object['result']['formatted_phone_number']);
+		}else{
+			array_push('ไม่มีเบอร์ติดต่อ')
+		}
 		array_push($address, $object['result']['formatted_address']);
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
@@ -63,7 +68,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                         		'actions' => [
                             			[
 							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
+							'label' => "$number[1]",
 							'data' => 'เบอร์โทร'
 						],[
                                 			'type' => 'uri',
