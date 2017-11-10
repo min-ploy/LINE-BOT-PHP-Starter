@@ -36,7 +36,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		array_push($name, $object['result']['name']);
 		array_push($number, $object['result']['formatted_phone_number']);
 		array_push($address, $object['result']['vicinity']);
-		array_push($urll, $object['result']['urll']);
+		array_push($urll, $object['result']['url']);
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
 	$messageData = [
