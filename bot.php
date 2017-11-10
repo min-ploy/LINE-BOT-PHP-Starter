@@ -29,37 +29,18 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$text = curl_exec( $curl_handle );
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
-		$name = $object['result']['name']; 
+		$name = array($object['result']['name']); 
 		$number = $object['result']['formatted_phone_number'];
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
-	            
+	}            
         $messageData = [
-            'type' => 'template',
-            'altText' => 'carousel',
-            'template' => [
-                'type' => 'carousel',
-                'columns' => [
-                    [
-                        'title' => "$name[$x]",
-                        'text' => "$address[$x]",
-                        'actions' => [
-                            [
-                                'type' => 'postback',
-                                'label' => "$number[$x]",
-                                'data' => "$number[$x]"
-                            ],
-                            [
-                                'type' => 'uri',
-                                'label' => 'Google',
-                                'uri' => 'http://google.com'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+            'type' => 'text',
+            'text' => "$name"
         ];
-	}
+	
+	
+	
     
 } else {
 
