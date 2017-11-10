@@ -49,8 +49,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => "$number[0]"
+							'label' => "$number[0]",
+							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
@@ -63,8 +63,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                         		'actions' => [
                             			[
 							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => "$number[1]"
+							'label' => "$number[1]",
+							'data' => 'เบอร์โทร'
 						],[
                                 			'type' => 'uri',
                                 			'label' => 'Google',
@@ -77,8 +77,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => "$number[2]"
+							'label' => "$number[2]",
+							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
@@ -91,8 +91,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => "$number[3]"
+							'label' => "$number[3]",
+							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
@@ -105,8 +105,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => "$number[4]"
+							'label' => "$number[4]",
+							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
