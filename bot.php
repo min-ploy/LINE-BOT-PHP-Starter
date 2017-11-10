@@ -49,7 +49,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => '00',
+							'label' => "$number[0]",
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
