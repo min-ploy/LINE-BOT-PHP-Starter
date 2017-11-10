@@ -113,7 +113,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                                 			'uri' => 'http://google.com'
 						]
 					]
-                    		],
+                    		]
 			]
 		]
 	];
