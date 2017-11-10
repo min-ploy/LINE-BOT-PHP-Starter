@@ -19,6 +19,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	$text = curl_exec( $curl_handle );
 	curl_close( $curl_handle ); 
 	$obj = json_decode($text, TRUE);
+	$name = array();
 	for ($x = 0; $x < 5; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
@@ -29,7 +30,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$text = curl_exec( $curl_handle );
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
-		$name = $object['result']['name']; 
+		array_push($name, $object['result']['name']); 
 		$number = $object['result']['formatted_phone_number'];
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
@@ -41,7 +42,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                 'type' => 'carousel',
                 'columns' => [
                     [
-                        'title' => 'พี่เก๋ตามสั่ง',
+                        'title' => "$name[0]",
                         'text' => 'ที่อยู่',
                         'actions' => [
                             [
