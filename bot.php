@@ -22,7 +22,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	$name = array();
 	$number = array();
 	$address = array();
-	//$review = array();
+	$urll = array();
 	for ($x = 0; $x < 5; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
@@ -36,7 +36,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		array_push($name, $object['result']['name']);
 		array_push($number, $object['result']['formatted_phone_number']);
 		array_push($address, $object['result']['vicinity']);
-		//array_push($review, $object['result']['name']);
+		array_push($urll, $object['result']['urll']);
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
 	$messageData = [
@@ -55,8 +55,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
-							'label' => 'Google',
-                                			'uri' => 'http://google.com'
+							'label' => 'Google Map',
+                                			'uri' => "$urll[0]"
 						]
 					]
                     		],[
