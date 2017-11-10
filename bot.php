@@ -69,7 +69,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 							'data' => 'เบอร์โทร'
 						],[
                                 			'type' => 'uri',
-                                			'label' => 'Google',
+                                			'label' => 'Google Map',
                                 			'uri' => "$urll[1]"
 						]
 					]
@@ -83,7 +83,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
-							'label' => 'Google',
+							'label' => 'Google Map',
                                 			'uri' => "$urll[2]"
 						]
 					]
@@ -97,7 +97,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
-							'label' => 'Google',
+							'label' => 'Google Map',
                                 			'uri' => "$urll[3]"
 						]
 					]
@@ -111,7 +111,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
-							'label' => 'Google',
+							'label' => 'Google Map',
                                 			'uri' => "$urll[4]"
 						]
 					]
