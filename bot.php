@@ -45,7 +45,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 			'columns' => [
 				[
 					'title' => "$name[0]",
-					'text' => "$address[0]",
+					'text' => 'ที่อยู่',
 					'actions' => [
 						[
 							'type' => 'postback',
