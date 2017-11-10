@@ -43,7 +43,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		'type' => 'template',
 		'altText' => 'carousel',
 		'template' => [
-			'type' => 'carousel',
+			'type' => 'image_carousel',
 			'columns' => [
 				[
 					'title' => "$name[0]",
