@@ -35,7 +35,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$object = json_decode($text, TRUE);
 		array_push($name, $object['result']['name']);
 		array_push($number, $object['result']['formatted_phone_number']);
-		array_push($address, $object['result']['adr_address']);
+		array_push($address, $object['result']['address']);
 		//array_push($review, $object['result']['name']);
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
