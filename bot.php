@@ -42,7 +42,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                 'type' => 'carousel',
                 'columns' => [
                     [
-                        'title' => "$name[0]",
+                        'title' => "$name[1]",
                         'text' => 'ที่อยู่',
                         'actions' => [
                             [
