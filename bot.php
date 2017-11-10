@@ -56,93 +56,9 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                                 'uri' => 'http://google.com'
                             ]
                         ]
-                    ]
-                ]
-            ]
-        ];
-	$messageData1 = [
-            'type' => 'template',
-            'altText' => 'carousel',
-            'template' => [
-                'type' => 'carousel',
-                'columns' => [
-                    [
+                    ],
+		    [
                         'title' => "$name[1]",
-                        'text' => 'ที่อยู่',
-                        'actions' => [
-                            [
-                                'type' => 'postback',
-                                'label' => 'เบอร์โทร',
-                                'data' => '0805860915'
-                            ],
-                            [
-                                'type' => 'uri',
-                                'label' => 'Google',
-                                'uri' => 'http://google.com'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ];
-	$messageData2 = [
-            'type' => 'template',
-            'altText' => 'carousel',
-            'template' => [
-                'type' => 'carousel',
-                'columns' => [
-                    [
-                        'title' => "$name[2]",
-                        'text' => 'ที่อยู่',
-                        'actions' => [
-                            [
-                                'type' => 'postback',
-                                'label' => 'เบอร์โทร',
-                                'data' => '0805860915'
-                            ],
-                            [
-                                'type' => 'uri',
-                                'label' => 'Google',
-                                'uri' => 'http://google.com'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ];
-	$messageData3 = [
-            'type' => 'template',
-            'altText' => 'carousel',
-            'template' => [
-                'type' => 'carousel',
-                'columns' => [
-                    [
-                        'title' => "$name[3]",
-                        'text' => 'ที่อยู่',
-                        'actions' => [
-                            [
-                                'type' => 'postback',
-                                'label' => 'เบอร์โทร',
-                                'data' => '0805860915'
-                            ],
-                            [
-                                'type' => 'uri',
-                                'label' => 'Google',
-                                'uri' => 'http://google.com'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ];
-	$messageData4 = [
-            'type' => 'template',
-            'altText' => 'carousel',
-            'template' => [
-                'type' => 'carousel',
-                'columns' => [
-                    [
-                        'title' => "$name[4]",
                         'text' => 'ที่อยู่',
                         'actions' => [
                             [
