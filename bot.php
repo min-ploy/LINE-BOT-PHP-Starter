@@ -34,8 +34,33 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$number = $object['result']['formatted_phone_number'];
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
-	           
-	$messageData = [
+	}           
+	$messageData0 = [
+            'type' => 'template',
+            'altText' => 'carousel',
+            'template' => [
+                'type' => 'carousel',
+                'columns' => [
+                    [
+                        'title' => "$name[0]",
+                        'text' => 'ที่อยู่',
+                        'actions' => [
+                            [
+                                'type' => 'postback',
+                                'label' => 'เบอร์โทร',
+                                'data' => '0805860915'
+                            ],
+                            [
+                                'type' => 'uri',
+                                'label' => 'Google',
+                                'uri' => 'http://google.com'
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+	$messageData1 = [
             'type' => 'template',
             'altText' => 'carousel',
             'template' => [
@@ -60,11 +85,86 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                 ]
             ]
         ];
+	$messageData2 = [
+            'type' => 'template',
+            'altText' => 'carousel',
+            'template' => [
+                'type' => 'carousel',
+                'columns' => [
+                    [
+                        'title' => "$name[2]",
+                        'text' => 'ที่อยู่',
+                        'actions' => [
+                            [
+                                'type' => 'postback',
+                                'label' => 'เบอร์โทร',
+                                'data' => '0805860915'
+                            ],
+                            [
+                                'type' => 'uri',
+                                'label' => 'Google',
+                                'uri' => 'http://google.com'
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+	$messageData3 = [
+            'type' => 'template',
+            'altText' => 'carousel',
+            'template' => [
+                'type' => 'carousel',
+                'columns' => [
+                    [
+                        'title' => "$name[3]",
+                        'text' => 'ที่อยู่',
+                        'actions' => [
+                            [
+                                'type' => 'postback',
+                                'label' => 'เบอร์โทร',
+                                'data' => '0805860915'
+                            ],
+                            [
+                                'type' => 'uri',
+                                'label' => 'Google',
+                                'uri' => 'http://google.com'
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+	$messageData4 = [
+            'type' => 'template',
+            'altText' => 'carousel',
+            'template' => [
+                'type' => 'carousel',
+                'columns' => [
+                    [
+                        'title' => "$name[4]",
+                        'text' => 'ที่อยู่',
+                        'actions' => [
+                            [
+                                'type' => 'postback',
+                                'label' => 'เบอร์โทร',
+                                'data' => '0805860915'
+                            ],
+                            [
+                                'type' => 'uri',
+                                'label' => 'Google',
+                                'uri' => 'http://google.com'
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
 	$response = [
 	'replyToken' => $replyToken,
 	'messages' => [$messageData]
 	];
-	}
+	
 	
     
 } else {
