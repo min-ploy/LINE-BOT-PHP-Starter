@@ -47,7 +47,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                             [
                                 'type' => 'postback',
                                 'label' => 'เบอร์โทร',
-                                'data' => 'value'
+                                'data' => '0805860915'
                             ],
                             [
                                 'type' => 'uri',
