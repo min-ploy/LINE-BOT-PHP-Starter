@@ -61,7 +61,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
                     		],[
                         		'title' => "$name[1]",
-                        		'text' => 'ที่อยู่',
+                        		'text' => "$address[1]",
                         		'actions' => [
                             			[
 							'type' => 'postback',
@@ -75,7 +75,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
 				],[
 					'title' => "$name[2]",
-					'text' => 'ที่อยู่',
+					'text' => "$address[2]",
 					'actions' => [
 						[
 							'type' => 'postback',
@@ -89,7 +89,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
                     		],[
 					'title' => "$name[3]",
-					'text' => 'ที่อยู่',
+					'text' => "$address[3]",
 					'actions' => [
 						[
 							'type' => 'postback',
@@ -103,7 +103,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
                     		],[
 					'title' => "$name[4]",
-					'text' => 'ที่อยู่',
+					'text' => "$address[4]",
 					'actions' => [
 						[
 							'type' => 'postback',
