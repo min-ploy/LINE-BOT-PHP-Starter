@@ -23,6 +23,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	$number = array();
 	$address = array();
 	$urll = array();
+	$img = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363"
 	for ($x = 0; $x < 5; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
@@ -44,7 +45,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		'altText' => 'carousel',
 		'template' => [
 			'type' => 'carousel',
-			'imageUrl' => "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363"
+			'imageUrl' => [$img],
 			'columns' => [
 				[
 					'title' => "$name[0]",
