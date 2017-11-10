@@ -70,7 +70,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						],[
                                 			'type' => 'uri',
                                 			'label' => 'Google',
-                                			'uri' => 'http://google.com'
+                                			'uri' => "$urll[1]"
 						]
 					]
 				],[
@@ -84,7 +84,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
-                                			'uri' => 'http://google.com'
+                                			'uri' => "$urll[2]"
 						]
 					]
                     		],[
@@ -98,7 +98,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
-                                			'uri' => 'http://google.com'
+                                			'uri' => "$urll[3]"
 						]
 					]
                     		],[
@@ -112,7 +112,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						],[
 							'type' => 'uri',
 							'label' => 'Google',
-                                			'uri' => 'http://google.com'
+                                			'uri' => "$urll[4]"
 						]
 					]
                     		]
