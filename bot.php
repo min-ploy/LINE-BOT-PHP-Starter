@@ -35,7 +35,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		array_push($name, $object['result']['name']);
 		$a = $object['result']['formatted_phone_number'];
 		if (!is_null($a)){
-			array_push($number, $object['result']['formatted_phone_number']);
+			array_push($number, $a);
 		}else{
 			array_push('ไม่มีเบอร์ติดต่อ');
 		}
