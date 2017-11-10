@@ -32,17 +32,17 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$name = $object['result']['name']; 
 		$number = $object['result']['formatted_phone_number'];
 		$address = $object['result']['formatted_address'];
+		$namey .= $name
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
-	           
+	}           
         $messageData = [
             'type' => 'text',
-            'text' => "$name[$x]"
+            'text' => "$namey"
         ];
 	$response = [
 	'replyToken' => $replyToken,
 	'messages' => [$messageData]
 	];
-	}
 	
 	
     
