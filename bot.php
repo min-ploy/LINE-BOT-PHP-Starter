@@ -33,7 +33,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
 		array_push($name, $object['result']['name']);
-		$a = array_push($number, $object['result']['formatted_phone_number']);
+		$a = $object['result']['formatted_phone_number'];
 		if (!is_null($a)){
 			array_push($number, $object['result']['formatted_phone_number']);
 		}else{
