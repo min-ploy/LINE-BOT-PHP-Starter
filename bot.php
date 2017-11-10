@@ -50,9 +50,9 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'text' => "$address[0]",
 					'actions' => [
 						[
-							'type' => 'message',
+							'type' => 'postback',
 							'label' => 'เบอร์โทร',
-							'text' => "$number[0]"
+							'data' => "$number[0]"
 						],[
 							'type' => 'uri',
 							'label' => 'Google Map',
