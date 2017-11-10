@@ -51,8 +51,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => "0834470774"
+							'label' => '0834470774',
+							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
 							'label' => 'Google Map',
