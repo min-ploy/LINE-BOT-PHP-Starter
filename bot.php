@@ -63,7 +63,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                         		'actions' => [
                             			[
 							'type' => 'postback',
-							'label' => '00',
+							'label' => "$number[1]",
 							'data' => 'เบอร์โทร'
 						],[
                                 			'type' => 'uri',
@@ -77,7 +77,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => '00',
+							'label' => "$number[2]",
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
@@ -91,7 +91,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => '00',
+							'label' => "$number[3]",
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
@@ -105,7 +105,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => '00',
+							'label' => "$number[4]",
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
