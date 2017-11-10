@@ -36,7 +36,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	           
         $messageData = [
             'type' => 'text',
-            'text' => "$name[x]"
+            'text' => "$name[$x]"
         ];
 	$response = [
 	'replyToken' => $replyToken,
