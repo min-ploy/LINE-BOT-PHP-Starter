@@ -41,13 +41,13 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                 'type' => 'carousel',
                 'columns' => [
                     [
-                        'title' => "$name[x]",
-                        'text' => "$address[x]",
+                        'title' => "$name",
+                        'text' => "$address",
                         'actions' => [
                             [
                                 'type' => 'postback',
-                                'label' => "$number[x]",
-                                'data' => "$number[x]"
+                                'label' => "$number",
+                                'data' => "$number"
                             ],
                             [
                                 'type' => 'uri',
