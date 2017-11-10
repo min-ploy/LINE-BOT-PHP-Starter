@@ -34,7 +34,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
-$messageData = [
+	$messageData = [
             'type' => 'template',
             'altText' => 'carousel',
             'template' => [
