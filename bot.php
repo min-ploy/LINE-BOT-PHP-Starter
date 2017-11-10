@@ -29,9 +29,9 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$text = curl_exec( $curl_handle );
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
-		$name = $object['result']['name']; 
-		$number = $object['result']['formatted_phone_number'];
-		$address = $object['result']['formatted_address'];
+		$name = array($object['result']['name']); 
+		$number = array($object['result']['formatted_phone_number']);
+		$address = array($object['result']['formatted_address']);
 		$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	            
         $messageData = [
@@ -41,13 +41,13 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                 'type' => 'carousel',
                 'columns' => [
                     [
-                        'title' => $object['result']['name'],
-                        'text' => $object['result']['formatted_address'],
+                        'title' => $name[0],
+                        'text' => $address[0],
                         'actions' => [
                             [
                                 'type' => 'postback',
                                 'label' => 'view',
-                                'data' => $number
+                                'data' => $number[0]
                             ],
                             [
                                 'type' => 'uri',
@@ -55,23 +55,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                                 'uri' => 'http://google.com'
                             ]
                         ]
-                    ],
-                    [
-                        'title' => 'Head 2',
-                        'text' => 'Description',
-                        'actions' => [
-                            [
-                                'type' => 'postback',
-                                'label' => 'view',
-                                'data' => 'value'
-                            ],
-                            [
-                                'type' => 'uri',
-                                'label' => 'google',
-                                'uri' => 'http://google.com'
-                            ]
-                        ]
-                    ],
+                    ]
                 ]
             ]
         ];
