@@ -45,7 +45,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 			'columns' => [
 				[
 					'title' => "$name[0]",
-					'text' => "$address[0]",
+					'text' => 'ที่อยู่',
 					'actions' => [
 						[
 							'type' => 'postback',
@@ -59,7 +59,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
                     		],[
                         		'title' => "$name[1]",
-                        		'text' => "$address[1]",
+                        		'text' => 'ที่อยู่',
                         		'actions' => [
                             			[
 							'type' => 'postback',
@@ -73,7 +73,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
 				],[
 					'title' => "$name[2]",
-					'text' => "$address[2]",
+					'text' => 'ที่อยู่',
 					'actions' => [
 						[
 							'type' => 'postback',
@@ -87,11 +87,25 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					]
                     		],[
 					'title' => "$name[3]",
-					'text' => "$address[3]",
+					'text' => 'ที่อยู่',
 					'actions' => [
 						[
 							'type' => 'postback',
 							'label' => "$number[3]",
+							'data' => 'เบอร์โทร'
+						],[
+							'type' => 'uri',
+							'label' => 'Google',
+                                			'uri' => 'http://google.com'
+						]
+					]
+                    		],[
+					'title' => "$name[4]",
+					'text' => 'ที่อยู่',
+					'actions' => [
+						[
+							'type' => 'postback',
+							'label' => "$number[4]",
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
