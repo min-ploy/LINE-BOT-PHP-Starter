@@ -67,53 +67,11 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 							'data' => '0805860915'
 						],[
                                 			'type' => 'uri',
-                                		'label' => 'Google',
-                                		'uri' => 'http://google.com'
-						]
-					]
-				],[
-					'title' => "$name[2]",
-					'text' => 'ที่อยู่',
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => '0805860915'
-						],[
-							'type' => 'uri',
-							'label' => 'Google',
+                                			'label' => 'Google',
                                 			'uri' => 'http://google.com'
 						]
 					]
-                    		],[
-					'title' => "$name[3]",
-					'text' => 'ที่อยู่',
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => '0805860915'
-						],[
-							'type' => 'uri',
-							'label' => 'Google',
-                                			'uri' => 'http://google.com'
-						]
-					]
-                    		],[
-					'title' => "$name[4]",
-					'text' => 'ที่อยู่',
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'เบอร์โทร',
-							'data' => '0805860915'
-						],[
-							'type' => 'uri',
-							'label' => 'Google',
-                                			'uri' => 'http://google.com'
-						]
-					]
-                    		]
+				]
 			]
 		]
 	];
