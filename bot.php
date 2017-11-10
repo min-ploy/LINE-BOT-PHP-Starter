@@ -33,12 +33,12 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$number = $object['result']['formatted_phone_number'];
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
-	}            
+	           
         $messageData = [
             'type' => 'text',
-            'text' => "$name"
+            'text' => "$name[$x]"
         ];
-	
+	}
 	
 	
     
