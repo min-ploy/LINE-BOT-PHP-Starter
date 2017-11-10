@@ -10,48 +10,72 @@ $jsonObj = json_decode($jsonString);
 $message = $jsonObj->{"events"}[0]->{"message"};
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
-if ($message->{"text"} == 'carousel') {
-    $messageData = [
-        'type' => 'template',
-        'altText' => 'carousel',
-        'template' => [
-            'type' => 'carousel',
-            'columns' => [
-                [
-                    'title' => 'Head1',
-                    'text' => 'Description',
-                    'actions' => [
-                        [
-                            'type' => 'postback',
-                            'label' => 'view',
-                            'data' => 'value'
-                        ],
-                        [
-                            'type' => 'uri',
-                            'label' => 'google',
-                            'uri' => 'http://google.com'
+if ($message->{"text"} == 'ร้านอาหาร') {
+    $url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?language=th&location=13.825699,100.516154&radius=500&type=restaurant&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+	$curl_handle = curl_init();
+	curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt( $curl_handle, CURLOPT_URL, $url );
+	curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+	$text = curl_exec( $curl_handle );
+	curl_close( $curl_handle ); 
+	$obj = json_decode($text, TRUE);
+	for ($x = 0; $x < 5; $x++) {
+		$mes = $obj['results'][$x]['place_id']; 
+		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
+		$curl_handle = curl_init();
+		curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt( $curl_handle, CURLOPT_URL, $url );
+		curl_setopt( $curl_handle, CURLOPT_RETURNTRANSFER, true);
+		$text = curl_exec( $curl_handle );
+		curl_close( $curl_handle ); 
+		$object = json_decode($text, TRUE);
+		$name = $object['result']['name']; 
+		$number = $object['result']['formatted_phone_number'];
+		$address = $object['result']['formatted_address'];
+		$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+	            
+        $messageData = [
+            'type' => 'template',
+            'altText' => 'carousel',
+            'template' => [
+                'type' => 'carousel',
+                'columns' => [
+                    [
+                        'title' => $name,
+                        'text' => $ddress,
+                        'actions' => [
+                            [
+                                'type' => 'postback',
+                                'label' => 'view',
+                                'data' => 'value'
+                            ],
+                            [
+                                'type' => 'uri',
+                                'label' => 'google',
+                                'uri' => 'http://google.com'
+                            ]
                         ]
-                    ]
-                ],
-                [
-                    'title' => 'Head 2',
-                    'text' => 'Description',
-                    'actions' => [
-                        [
-                            'type' => 'postback',
-                            'label' => 'view',
-                            'data' => 'value'
-                        ],
-                        [
-                            'type' => 'uri',
-                            'label' => 'google',
-                            'uri' => 'http://google.com'
+                    ],
+                    [
+                        'title' => 'Head 2',
+                        'text' => 'Description',
+                        'actions' => [
+                            [
+                                'type' => 'postback',
+                                'label' => 'view',
+                                'data' => 'value'
+                            ],
+                            [
+                                'type' => 'uri',
+                                'label' => 'google',
+                                'uri' => 'http://google.com'
+                            ]
                         ]
-                    ]
-                ],
+                    ],
+                ]
             ]
-        ]
-    ];
+        ];
+    }
     
 } else {
 
