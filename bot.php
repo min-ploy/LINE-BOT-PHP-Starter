@@ -52,7 +52,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						[
 							'type' => 'postback',
 							'label' => 'เบอร์โทร',
-							'data' => "$number[0]"
+							'data' => "0834470774"
 						],[
 							'type' => 'uri',
 							'label' => 'Google Map',
