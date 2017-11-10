@@ -19,7 +19,6 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	$text = curl_exec( $curl_handle );
 	curl_close( $curl_handle ); 
 	$obj = json_decode($text, TRUE);
-	$name = array();
 	for ($x = 0; $x < 5; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
