@@ -29,9 +29,9 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$text = curl_exec( $curl_handle );
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
-		$name = $object['result']['name']; 
-		$number = $object['result']['formatted_phone_number'];
-		$address = $object['result']['formatted_address'];
+		$name = array($object['result']['name']); 
+		$number = array($object['result']['formatted_phone_number']);
+		$address = array($object['result']['formatted_address']);
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	            
         $messageData = [
