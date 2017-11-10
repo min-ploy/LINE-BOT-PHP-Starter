@@ -99,20 +99,6 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                                 			'uri' => 'http://google.com'
 						]
 					]
-                    		],[
-					'title' => "$name[4]",
-					'text' => "$address[4]",
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => "$number[4]",
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google',
-                                			'uri' => 'http://google.com'
-						]
-					]
                     		]
 			]
 		]
