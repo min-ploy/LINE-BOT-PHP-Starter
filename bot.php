@@ -45,10 +45,10 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		'altText' => 'carousel',
 		'template' => [
 			'type' => 'carousel',
-			'imageUrl' => [$img],
 			'columns' => [
 				[
 					'title' => "$name[0]",
+					'imageUrl' => "$img",
 					'text' => "$address[0]",
 					'actions' => [
 						[
