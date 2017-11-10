@@ -35,28 +35,27 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$address = $object['result']['formatted_address'];
 		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
-	$messageData0 = [
-            'type' => 'template',
-            'altText' => 'carousel',
-            'template' => [
-                'type' => 'carousel',
-                'columns' => [
-                    [
-                        'title' => "$name[0]",
-                        'text' => 'ที่อยู่',
-                        'actions' => [
-                            [
-                                'type' => 'postback',
-                                'label' => 'เบอร์โทร',
-                                'data' => '0805860915'
-                            ],
-                            [
-                                'type' => 'uri',
-                                'label' => 'Google',
-                                'uri' => 'http://google.com'
-                            ]
-                        ]
-                    ],
+	$messageData = [
+		'type' => 'template',
+		'altText' => 'carousel',
+		'template' => [
+			'type' => 'carousel',
+			'columns' => [
+				[
+					'title' => "$name[0]",
+					'text' => 'ที่อยู่',
+					'actions' => [
+						[
+							'type' => 'postback',
+							'label' => 'เบอร์โทร',
+							'data' => '0805860915'
+						],[
+							'type' => 'uri',
+						'label' => 'Google',
+                                		'uri' => 'http://google.com'
+						]
+					]
+                    		],
 		    [
                         'title' => "$name[1]",
                         'text' => 'ที่อยู่',
