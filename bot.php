@@ -21,7 +21,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	$obj = json_decode($text, TRUE);
 	$name = array();
 	$number = array();
-	$address = arrey();
+	$address = array();
 	for ($x = 0; $x < 5; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
