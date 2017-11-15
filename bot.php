@@ -73,49 +73,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                                 			'uri' => "$urll[1]"
 						]
 					]
-				],[
-					'title' => "$name[2]",
-					'text' => "$address[2]",
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[2]"
-						]
-					]
-                    		],[
-					'title' => "$name[3]",
-					'text' => "$address[3]",
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[3]"
-						]
-					]
-                    		],[
-					'title' => "$name[4]",
-					'text' => "$address[4]",
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[4]"
-						]
-					]
-                    		]
+				]
 			]
 		]
 	];
