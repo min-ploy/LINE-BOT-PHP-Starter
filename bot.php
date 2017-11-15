@@ -93,7 +93,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 					'actions' => [
 						[
 							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
+							'label' => ('ไม่มีเบอร์ติดต่อ', $number[3]);
 							'data' => 'เบอร์โทร'
 						],[
 							'type' => 'uri',
