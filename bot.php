@@ -88,8 +88,8 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						]
 					]
                     		],[
-					'title' => "$name[3]",
-					'text' => "$address[3]",
+					'title' => "$name[4]",
+					'text' => "$address[4]",
 					'actions' => [
 						[
 							'type' => 'postback',
@@ -98,7 +98,7 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 						],[
 							'type' => 'uri',
 							'label' => 'Google Map',
-                                			'uri' => "$urll[3]"
+                                			'uri' => "$urll[4]"
 						]
 					]
                     		]
