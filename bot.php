@@ -87,6 +87,20 @@ if ($message->{"text"} == 'ร้านอาหาร') {
                                 			'uri' => "$urll[2]"
 						]
 					]
+                    		],[
+					'title' => "$name[3]",
+					'text' => "$address[3]",
+					'actions' => [
+						[
+							'type' => 'postback',
+							'label' => 'ไม่มีเบอร์ติดต่อ',
+							'data' => 'เบอร์โทร'
+						],[
+							'type' => 'uri',
+							'label' => 'Google Map',
+                                			'uri' => "$urll[3]"
+						]
+					]
                     		]
 			]
 		]
