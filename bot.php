@@ -19,10 +19,10 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 	$text = curl_exec( $curl_handle );
 	curl_close( $curl_handle ); 
 	$obj = json_decode($text, TRUE);
-	$name = array();
-	$number = array();
-	$address = array();
-	$urll = array();
+	//$name = array();
+	//$number = array();
+	//$address = array();
+	//$urll = array();
 	for ($x = 0; $x < 5; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
@@ -33,91 +33,18 @@ if ($message->{"text"} == 'ร้านอาหาร') {
 		$text = curl_exec( $curl_handle );
 		curl_close( $curl_handle ); 
 		$object = json_decode($text, TRUE);
-		array_push($name, $object['result']['name']);
-		array_push($number, $object['result']['formatted_phone_number']);
-		array_push($address, $object['result']['vicinity']);
-		array_push($urll, $object['result']['url']);
-		//$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
+		//array_push($name, $object['result']['name']);
+		//array_push($number, $object['result']['formatted_phone_number']);
+		//array_push($address, $object['result']['vicinity']);
+		//array_push($urll, $object['result']['url']);
+		$name = $object['result']['name'];
+		$number = $object['result']['formatted_phone_number'];
+		$address = $object['result']['vicinity'];
+		$addname .= "->>".$name."\n".$number."\n".$address."\n\n";
 	}           
 	$messageData = [
-		'type' => 'template',
-		'altText' => 'carousel',
-		'template' => [
-			'type' => 'carousel',
-			'columns' => [
-				[
-					'title' => "$name[0]",
-					'text' => "$address[0]",
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => "$number[0]",
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[0]"
-						]
-					]
-                    		],[
-                        		'title' => "$name[1]",
-                        		'text' => "$address[1]",
-                        		'actions' => [
-                            			[
-							'type' => 'postback',
-							'label' => "$number[1]",
-							'data' => 'เบอร์โทร'
-						],[
-                                			'type' => 'uri',
-                                			'label' => 'Google Map',
-                                			'uri' => "$urll[1]"
-						]
-					]
-				],[
-					'title' => "$name[2]",
-					'text' => "$address[2]",
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[2]"
-						]
-					]
-                    		],[
-					'title' => "$name[3]",
-					'text' => 'address',
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[3]"
-						]
-					]
-                    		],[
-					'title' => "$name[4]",
-					'text' => 'address',
-					'actions' => [
-						[
-							'type' => 'postback',
-							'label' => 'ไม่มีเบอร์ติดต่อ',
-							'data' => 'เบอร์โทร'
-						],[
-							'type' => 'uri',
-							'label' => 'Google Map',
-                                			'uri' => "$urll[4]"
-						]
-					]
-                    		]
-			]
-		]
+		'type' => 'text',
+		'text' => "$addname"		
 	];
 	$response = [
 	'replyToken' => $replyToken,
