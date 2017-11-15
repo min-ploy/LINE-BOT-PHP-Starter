@@ -23,7 +23,7 @@ if ($message->{"text"} == 'ร้านค้า') {
 	//$number = array();
 	//$address = array();
 	//$urll = array();
-	for ($x = 0; $x < 7; $x++) {
+	for ($x = 0; $x < 10; $x++) {
 		$mes = $obj['results'][$x]['place_id']; 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=$mes&key=AIzaSyBEA0UcZj9m-fYvwGTx0aoITGJxyWLdGm4";
 		$curl_handle = curl_init();
